@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soil Details - FarmAI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="form-container">
+        <nav class="navbar">
+            <div class="logo">
+                <span class="logo-icon">🌾</span>
+                <span class="logo-text">FarmAI</span>
+            </div>
+            <div class="nav-links">
+                <a href="dashboard.html" class="btn-back">← Back to Dashboard</a>
+            </div>
+        </nav>
+
+        <div class="form-card">
+            <div class="form-header">
+                <h2>Soil Details</h2>
+                <p>Enter your soil characteristics for better recommendations</p>
+            </div>
+            <form class="input-form" id="soilForm">
+                <div class="form-group">
+                    <label for="soilMoisture">Soil Moisture (%)</label>
+                    <input type="number" id="soilMoisture" name="soilMoisture" min="0" max="100" step="0.1" required placeholder="Enter soil moisture percentage">
+                </div>
+                <div class="form-group">
+                    <label for="phLevel">pH Level</label>
+                    <input type="number" id="phLevel" name="phLevel" min="0" max="14" step="0.1" required placeholder="Enter pH level (0-14)">
+                </div>
+                <div class="form-group">
+                    <label for="nitrogen">Nitrogen Content (mg/kg)</label>
+                    <input type="number" id="nitrogen" name="nitrogen" min="0" step="0.1" placeholder="Enter nitrogen content">
+                </div>
+                <div class="form-group">
+                    <label for="phosphorus">Phosphorus Content (mg/kg)</label>
+                    <input type="number" id="phosphorus" name="phosphorus" min="0" step="0.1" placeholder="Enter phosphorus content">
+                </div>
+                <div class="form-group">
+                    <label for="potassium">Potassium Content (mg/kg)</label>
+                    <input type="number" id="potassium" name="potassium" min="0" step="0.1" placeholder="Enter potassium content">
+                </div>
+                <div class="form-group">
+                    <label for="organicMatter">Organic Matter (%)</label>
+                    <input type="number" id="organicMatter" name="organicMatter" min="0" max="100" step="0.1" placeholder="Enter organic matter percentage">
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" onclick="window.location.href='dashboard.html'">Cancel</button>
+                    <button type="submit" class="btn-primary">Save & Continue</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

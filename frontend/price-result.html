@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price Prediction Result - FarmAI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="result-container">
+        <nav class="navbar">
+            <div class="logo">
+                <span class="logo-icon">🌾</span>
+                <span class="logo-text">FarmAI</span>
+            </div>
+            <div class="nav-links">
+                <a href="dashboard.html" class="btn-back">← Back to Dashboard</a>
+            </div>
+        </nav>
+
+        <div class="result-card">
+            <div class="result-header">
+                <h2>Price Prediction Result</h2>
+                <p>Forecast for <span id="cropName">Wheat</span> in <span id="monthName">January</span></p>
+            </div>
+
+            <div class="price-prediction">
+                <div class="predicted-price">
+                    <h3>Predicted Price</h3>
+                    <div class="price-value">₹<span id="predictedPrice">2,150</span>/quintal</div>
+                    <p class="price-trend" id="priceTrend">📈 Expected to increase by 5%</p>
+                </div>
+
+                <div class="price-details">
+                    <div class="detail-item">
+                        <span class="detail-label">Current Price:</span>
+                        <span class="detail-value" id="currentPrice">₹2,050/quintal</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Price Range:</span>
+                        <span class="detail-value" id="priceRange">₹2,000 - ₹2,300/quintal</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Confidence:</span>
+                        <span class="detail-value" id="predictionConfidence">87%</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Market Sentiment:</span>
+                        <span class="detail-value" id="marketSentiment">Positive</span>
+                    </div>
+                </div>
+
+                <div class="selling-recommendation">
+                    <h4>💡 Selling Recommendation</h4>
+                    <p id="sellingAdvice">Based on the price prediction, it's recommended to hold your crop until mid-January when prices are expected to peak. Consider selling if prices reach ₹2,300/quintal or above.</p>
+                </div>
+
+                <div class="factors">
+                    <h4>Factors Influencing Price</h4>
+                    <ul id="priceFactors">
+                        <li>Seasonal demand increase</li>
+                        <li>Government procurement policies</li>
+                        <li>International market trends</li>
+                        <li>Weather conditions in major producing regions</li>
+                        <li>Transportation and storage costs</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="result-actions">
+                <button type="button" class="btn-secondary" onclick="window.location.href='price-prediction.html'">Get Another Prediction</button>
+                <button type="button" class="btn-primary" onclick="window.location.href='dashboard.html'">Back to Dashboard</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

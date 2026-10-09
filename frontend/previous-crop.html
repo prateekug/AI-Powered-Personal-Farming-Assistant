@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Previous Crop - FarmAI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="form-container">
+        <nav class="navbar">
+            <div class="logo">
+                <span class="logo-icon">🌾</span>
+                <span class="logo-text">FarmAI</span>
+            </div>
+            <div class="nav-links">
+                <a href="dashboard.html" class="btn-back">← Back to Dashboard</a>
+            </div>
+        </nav>
+
+        <div class="form-card">
+            <div class="form-header">
+                <h2>Previous Crop</h2>
+                <p>What did you plant in your last season?</p>
+            </div>
+            <form class="input-form" id="previousCropForm">
+                <div class="form-group">
+                    <label for="cropType">Crop Type</label>
+                    <select id="cropType" name="cropType" required>
+                        <option value="">Select crop type</option>
+                        <option value="wheat">Wheat</option>
+                        <option value="rice">Rice</option>
+                        <option value="maize">Maize (Corn)</option>
+                        <option value="cotton">Cotton</option>
+                        <option value="sugarcane">Sugarcane</option>
+                        <option value="potato">Potato</option>
+                        <option value="tomato">Tomato</option>
+                        <option value="onion">Onion</option>
+                        <option value="soybean">Soybean</option>
+                        <option value="barley">Barley</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="yield">Yield (in tons)</label>
+                    <input type="number" id="yield" name="yield" step="0.1" min="0" placeholder="Enter yield amount">
+                </div>
+                <div class="form-group">
+                    <label for="season">Season</label>
+                    <select id="season" name="season" required>
+                        <option value="">Select season</option>
+                        <option value="kharif">Kharif (Monsoon)</option>
+                        <option value="rabi">Rabi (Winter)</option>
+                        <option value="zaid">Zaid (Summer)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="fertilizerUsed">Fertilizer Used</label>
+                    <input type="text" id="fertilizerUsed" name="fertilizerUsed" placeholder="Enter fertilizer type (optional)">
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" onclick="window.location.href='dashboard.html'">Cancel</button>
+                    <button type="submit" class="btn-primary">Save & Continue</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

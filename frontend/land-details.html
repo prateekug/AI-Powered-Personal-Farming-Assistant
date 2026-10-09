@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Land Details - FarmAI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="form-container">
+        <nav class="navbar">
+            <div class="logo">
+                <span class="logo-icon">🌾</span>
+                <span class="logo-text">FarmAI</span>
+            </div>
+            <div class="nav-links">
+                <a href="dashboard.html" class="btn-back">← Back to Dashboard</a>
+            </div>
+        </nav>
+
+        <div class="form-card">
+            <div class="form-header">
+                <h2>Land Details</h2>
+                <p>Enter information about your agricultural land</p>
+            </div>
+            <form class="input-form" id="landForm">
+                <div class="form-group">
+                    <label for="landSize">Land Size (in acres)</label>
+                    <input type="number" id="landSize" name="landSize" step="0.1" min="0" required placeholder="Enter land size">
+                </div>
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input type="text" id="location" name="location" required placeholder="Enter your location">
+                </div>
+                <div class="form-group">
+                    <label for="soilType">Soil Type</label>
+                    <select id="soilType" name="soilType" required>
+                        <option value="">Select soil type</option>
+                        <option value="clay">Clay</option>
+                        <option value="sandy">Sandy</option>
+                        <option value="loamy">Loamy</option>
+                        <option value="silt">Silt</option>
+                        <option value="peat">Peat</option>
+                        <option value="chalky">Chalky</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="irrigation">Irrigation Type</label>
+                    <select id="irrigation" name="irrigation" required>
+                        <option value="">Select irrigation type</option>
+                        <option value="rainfed">Rainfed</option>
+                        <option value="drip">Drip Irrigation</option>
+                        <option value="sprinkler">Sprinkler</option>
+                        <option value="flood">Flood Irrigation</option>
+                        <option value="none">No Irrigation</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" onclick="window.location.href='dashboard.html'">Cancel</button>
+                    <button type="submit" class="btn-primary">Save & Continue</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

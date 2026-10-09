@@ -1,0 +1,63 @@
+# ==========================================
+# FarmAI Project .gitignore
+# ==========================================
+
+# 1. Environment Variables & Secret Keys (CRITICAL)
+.env
+.env.local
+.env.development
+.env.production
+*.env
+
+# 2. SQLite Database & Persistence
+backend/database/app.db
+backend/database/*.db
+*.db
+*.sqlite
+*.sqlite3
+
+# 3. User Uploaded Files (Leaf Scan Photos)
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# 4. Python Bytecode & Cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# 5. Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# 6. IDE & Code Editor Configurations
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+
+# 7. Operating System Junk Files
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+
+# 8. Testing & Coverage Cache
+.pytest_cache/
+.coverage
+htmlcov/
+.cache/
+
+# 9. Packaging & Build Artifacts
+dist/
+build/
+*.egg-info/
+*.egg

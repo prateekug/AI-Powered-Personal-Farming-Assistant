@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Inputs - FarmAI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="form-container">
+        <nav class="navbar">
+            <div class="logo">
+                <span class="logo-icon">🌾</span>
+                <span class="logo-text">FarmAI</span>
+            </div>
+            <div class="nav-links">
+                <a href="dashboard.html" class="btn-back">← Back to Dashboard</a>
+            </div>
+        </nav>
+
+        <div class="form-card">
+            <div class="form-header">
+                <h2>Confirm Your Inputs</h2>
+                <p>Please review all the information before getting crop recommendation</p>
+            </div>
+
+            <div class="confirmation-summary">
+                <div class="summary-section">
+                    <h3>Land Details</h3>
+                    <div class="summary-item">
+                        <span>Land Size:</span>
+                        <span id="summaryLandSize">-</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Location:</span>
+                        <span id="summaryLocation">-</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Soil Type:</span>
+                        <span id="summarySoilType">-</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Irrigation:</span>
+                        <span id="summaryIrrigation">-</span>
+                    </div>
+                </div>
+
+                <div class="summary-section">
+                    <h3>Previous Crop</h3>
+                    <div class="summary-item">
+                        <span>Crop Type:</span>
+                        <span id="summaryCropType">-</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Yield:</span>
+                        <span id="summaryYield">-</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Season:</span>
+                        <span id="summarySeason">-</span>
+                    </div>
+                </div>
+
+                <div class="summary-section">
+                    <h3>Soil Details</h3>
+                    <div class="summary-item">
+                        <span>Soil Moisture:</span>
+                        <span id="summarySoilMoisture">-</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>pH Level:</span>
+                        <span id="summaryPhLevel">-</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Nitrogen:</span>
+                        <span id="summaryNitrogen">-</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Phosphorus:</span>
+                        <span id="summaryPhosphorus">-</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Potassium:</span>
+                        <span id="summaryPotassium">-</span>
+                    </div>
+                </div>
+
+                <div class="summary-section">
+                    <h3>Planting Schedule</h3>
+                    <div class="summary-item">
+                        <span>Planting Date:</span>
+                        <span id="summaryPlantingDate">-</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Season:</span>
+                        <span id="summaryPlantingSeason">-</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="button" class="btn-secondary" onclick="window.location.href='dashboard.html'">Edit</button>
+                <button type="button" id="recommendationBtn" class="btn-primary" onclick="requestCropRecommendation()">Get Crop Recommendation</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

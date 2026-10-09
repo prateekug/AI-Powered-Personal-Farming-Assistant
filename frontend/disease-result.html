@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Result - FarmAI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="result-container">
+        <nav class="navbar">
+            <div class="logo">
+                <span class="logo-icon">🌾</span>
+                <span class="logo-text">FarmAI</span>
+            </div>
+            <div class="nav-links">
+                <a href="dashboard.html" class="btn-back">← Back to Dashboard</a>
+            </div>
+        </nav>
+
+        <div class="result-card">
+            <div class="result-header">
+                <h2>Disease Detection Result</h2>
+                <p>Analysis of your crop leaf image</p>
+            </div>
+
+            <div class="disease-result">
+                <div class="disease-status" id="diseaseStatus">
+                    <div class="status-icon">⚠️</div>
+                    <h3 id="diseaseName">Leaf Rust Detected</h3>
+                    <p class="confidence">Confidence: <span id="diseaseConfidence">89%</span></p>
+                </div>
+
+                <div class="disease-description">
+                    <h4>About this Disease</h4>
+                    <p id="diseaseDescription">Leaf rust is a fungal disease that causes orange-brown pustules on leaf surfaces. It can significantly reduce crop yield if not treated early.</p>
+                </div>
+
+                <div class="disease-impact">
+                    <h4>Impact on Crop</h4>
+                    <ul id="diseaseImpact">
+                        <li>Reduced photosynthesis capacity</li>
+                        <li>Premature leaf death</li>
+                        <li>Yield reduction up to 40%</li>
+                        <li>Lower grain quality</li>
+                    </ul>
+                </div>
+
+                <div class="treatment-recommendations">
+                    <h4>Recommended Treatments</h4>
+                    <div class="treatment-list">
+                        <div class="treatment-item">
+                            <div class="treatment-icon">💊</div>
+                            <div class="treatment-details">
+                                <h5>Fungicide Application</h5>
+                                <p>Apply Propiconazole (1ml/liter) or Tebuconazole (1ml/liter) as foliar spray. Repeat after 15 days if necessary.</p>
+                            </div>
+                        </div>
+                        <div class="treatment-item">
+                            <div class="treatment-icon">🌱</div>
+                            <div class="treatment-details">
+                                <h5>Fertilizer Recommendation</h5>
+                                <p>Apply Potassium (K) fertilizer to strengthen plant resistance. Use SOP (Sulphate of Potash) at 50kg/acre.</p>
+                            </div>
+                        </div>
+                        <div class="treatment-item">
+                            <div class="treatment-icon">💧</div>
+                            <div class="treatment-details">
+                                <h5>Water Management</h5>
+                                <p>Avoid overhead irrigation. Use drip irrigation to keep foliage dry and prevent fungal spread.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="prevention-tips">
+                    <h4>Prevention Tips</h4>
+                    <ul id="preventionTips">
+                        <li>Plant resistant varieties</li>
+                        <li>Crop rotation with non-host crops</li>
+                        <li>Remove infected plant debris</li>
+                        <li>Maintain proper plant spacing</li>
+                        <li>Monitor crops regularly</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="result-actions">
+                <button type="button" class="btn-secondary" onclick="window.location.href='disease-detection.html'">Analyze Another Image</button>
+                <button type="button" class="btn-primary" onclick="window.location.href='dashboard.html'">Back to Dashboard</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

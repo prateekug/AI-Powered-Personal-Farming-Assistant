@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmAI Backend Explanation & Viva Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Poppins', sans-serif; line-height: 1.6; color: #2d3748; background: #f7fafc; padding: 2rem; }
+        .container { max-width: 900px; margin: 0 auto; background: #ffffff; border-radius: 12px; padding: 3rem; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+        .header { text-align: center; margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 2px solid #edf2f7; }
+        .header h1 { font-size: 2.2rem; color: #2b6cb0; margin-bottom: 0.5rem; }
+        .header p { color: #718096; font-size: 1rem; }
+        .print-btn { background: #319795; color: white; border: none; padding: 0.75rem 1.5rem; font-size: 1rem; font-weight: 600; border-radius: 8px; cursor: pointer; margin-top: 1rem; transition: background 0.3s; }
+        .print-btn:hover { background: #2c7a7b; }
+        
+        .section { margin-bottom: 2.5rem; }
+        .section h2 { font-size: 1.5rem; color: #2c5282; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+        
+        .card { background: #f8fafc; border-left: 4px solid #3182ce; padding: 1.25rem; border-radius: 0 8px 8px 0; margin-bottom: 1rem; }
+        .card h3 { font-size: 1.1rem; color: #2d3748; margin-bottom: 0.5rem; }
+        .card p, .card ul { color: #4a5568; font-size: 0.95rem; }
+        .card ul { margin-left: 1.25rem; margin-top: 0.5rem; }
+
+        .analogy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem; }
+        .analogy-item { background: #ebf8ff; border: 1px solid #bee3f8; padding: 1rem; border-radius: 8px; text-align: center; }
+        .analogy-item div { font-size: 2rem; margin-bottom: 0.5rem; }
+        .analogy-item h4 { color: #2b6cb0; margin-bottom: 0.25rem; }
+        
+        table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+        th, td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid #e2e8f0; font-size: 0.9rem; }
+        th { background: #edf2f7; color: #2d3748; font-weight: 600; }
+        
+        .q-card { background: #fffaf0; border-left: 4px solid #dd6b20; padding: 1rem 1.25rem; margin-bottom: 1rem; border-radius: 0 8px 8px 0; }
+        .q-card h4 { color: #9c4221; margin-bottom: 0.4rem; }
+        .q-card p { color: #4a5568; font-size: 0.93rem; }
+
+        @media print {
+            body { background: white; padding: 0; }
+            .container { box-shadow: none; padding: 0; max-width: 100%; }
+            .print-btn { display: none; }
+            .card, .q-card { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌾 FarmAI Backend Explanation & Viva Guide</h1>
+            <p>A Complete, Simple-Word Guide to How Your Flask APIs & ML Integration Work</p>
+            <button class="print-btn" onclick="window.print()">🖨️ Download / Print as PDF</button>
+        </div>
+
+        <!-- Section 1: Analogy -->
+        <div class="section">
+            <h2>🍳 1. The Restaurant Analogy</h2>
+            <p>Think of your FarmAI project like a modern restaurant:</p>
+            <div class="analogy-grid">
+                <div class="analogy-item">
+                    <div>🍽️</div>
+                    <h4>Frontend</h4>
+                    <p>The Dining Room & Menu (HTML/CSS/JS interface)</p>
+                </div>
+                <div class="analogy-item">
+                    <div>👨‍🍳</div>
+                    <h4>Backend</h4>
+                    <p>The Waiter & Kitchen Manager (Flask API Server)</p>
+                </div>
+                <div class="analogy-item">
+                    <div>🗄️</div>
+                    <h4>Database</h4>
+                    <p>The Pantry & File Cabinet (SQLite + SQLAlchemy)</p>
+                </div>
+                <div class="analogy-item">
+                    <div>🤖</div>
+                    <h4>ML Model</h4>
+                    <p>The AI Specialist Chef (TensorFlow Leaf Scanner)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: Code Structure -->
+        <div class="section">
+            <h2>⚙️ 2. How Each Part of the Backend Works</h2>
+            
+            <div class="card">
+                <h3>🚀 <code>backend/app.py</code> — Central Controller</h3>
+                <p>Starts the Flask server on Port 5000, enables CORS security headers (allowing port 8000 to talk to port 5000), connects SQLite database, and registers all API blueprints.</p>
+            </div>
+
+            <div class="card">
+                <h3>🛡️ <code>routes/auth.py</code> — Login & Password Security</h3>
+                <p><strong>Register:</strong> Scrambles (hashes) user passwords using <code>generate_password_hash()</code> so passwords are never stored in plain text.<br>
+                <strong>Login:</strong> Verifies password hash and issues a digitally signed <strong>JWT Token</strong> (like a digital VIP pass) stored in browser <code>localStorage</code>.</p>
+            </div>
+
+            <div class="card">
+                <h3>🚜 <code>routes/farm.py</code> — Land & Soil Profile Manager</h3>
+                <p>Saves land size, soil pH, previous crop, and planting date into SQLite. Features <code>GET /api/farm/profile</code> which returns the complete aggregated profile for <code>confirmation.html</code> summary cards.</p>
+            </div>
+
+            <div class="card">
+                <h3>🧠 <code>services/disease_service.py</code> — AI Leaf Scanner</h3>
+                <ul>
+                    <li><strong>DiseasePredictionService (Pure ML):</strong> Preprocesses uploaded image (RGB -> resize 160x160 -> normalize pixels by dividing by 255.0) matching the notebook math, passes it to MobileNetV2, and outputs predicted disease and confidence %.</li>
+                    <li><strong>DiseaseInformationService (Advisory):</strong> Matches the predicted disease to farming advice (impact, treatments, prevention tips).</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Section 3: Viva Questions -->
+        <div class="section">
+            <h2>🎓 3. Essential Viva / Interview Questions</h2>
+
+            <div class="q-card">
+                <h4>Q1: What is a REST API?</h4>
+                <p>A REST API (Representational State Transfer) is an architectural style for web applications to exchange data using standard HTTP methods (GET, POST) and JSON format.</p>
+            </div>
+
+            <div class="q-card">
+                <h4>Q2: What is the difference between GET and POST?</h4>
+                <p><strong>GET</strong> retrieves data from the server without modifying anything (e.g. <code>GET /api/farm/profile</code>). <strong>POST</strong> sends new data to create/update records or run computations (e.g. <code>POST /api/auth/login</code>).</p>
+            </div>
+
+            <div class="q-card">
+                <h4>Q3: How do you secure user passwords?</h4>
+                <p>Passwords are never saved in plain text. We use PBKDF2 SHA-256 one-way cryptographic hashing (Werkzeug). Even if someone accesses the database, they cannot read the original password.</p>
+            </div>
+
+            <div class="q-card">
+                <h4>Q4: How does JWT Authentication work?</h4>
+                <p>Upon login, the server signs a token containing the <code>user_id</code>. The browser saves it in <code>localStorage</code> and sends it in the HTTP header <code>Authorization: Bearer &lt;token&gt;</code> for all protected requests.</p>
+            </div>
+
+            <div class="q-card">
+                <h4>Q5: What is CORS?</h4>
+                <p>Cross-Origin Resource Sharing. Browsers block frontend JS on port 8000 from accessing backend port 5000 due to Same-Origin Policy. <code>flask-cors</code> sends headers allowing safe cross-port requests.</p>
+            </div>
+
+            <div class="q-card">
+                <h4>Q6: What is an ORM?</h4>
+                <p>Object-Relational Mapping (SQLAlchemy). It lets us interact with database tables using Python classes (<code>User</code>, <code>Farm</code>, <code>SoilData</code>) instead of writing raw SQL strings, preventing SQL Injection attacks.</p>
+            </div>
+        </div>
+
+        <!-- Section 4: Table -->
+        <div class="section">
+            <h2>📊 4. HTTP Status Codes Quick Reference</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Status Code</th>
+                        <th>Meaning</th>
+                        <th>Where Used in FarmAI</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>200 OK</strong></td>
+                        <td>Success</td>
+                        <td>Login, fetching farm profile, leaf disease prediction.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>201 Created</strong></td>
+                        <td>Resource Created</td>
+                        <td>User registration.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>400 Bad Request</strong></td>
+                        <td>Client Input Error</td>
+                        <td>Invalid email, missing required form fields, invalid soil pH.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>401 Unauthorized</strong></td>
+                        <td>Auth Failure</td>
+                        <td>Wrong password, missing JWT token, or expired token.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

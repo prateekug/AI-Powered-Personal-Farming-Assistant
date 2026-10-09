@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Recommendation - FarmAI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="result-container">
+        <nav class="navbar">
+            <div class="logo">
+                <span class="logo-icon">🌾</span>
+                <span class="logo-text">FarmAI</span>
+            </div>
+            <div class="nav-links">
+                <a href="dashboard.html" class="btn-back">← Back to Dashboard</a>
+            </div>
+        </nav>
+
+        <div class="result-card">
+            <div class="result-header">
+                <h2>🌱 Crop Recommendation</h2>
+                <p>Based on your inputs, here's the best crop for you</p>
+            </div>
+
+            <div class="crop-recommendation">
+                <div class="recommended-crop">
+                    <div class="crop-icon-large">🌾</div>
+                    <h3 id="recommendedCropName">Wheat</h3>
+                    <p class="crop-confidence">Confidence: <span id="cropConfidence">92%</span></p>
+                </div>
+
+                <div class="crop-details">
+                    <div class="detail-item">
+                        <span class="detail-label">Expected Yield:</span>
+                        <span class="detail-value" id="expectedYield">4.5 tons/acre</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Growing Period:</span>
+                        <span class="detail-value" id="growingPeriod">120-150 days</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Best Planting Time:</span>
+                        <span class="detail-value" id="bestPlantingTime">October - November</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Water Requirement:</span>
+                        <span class="detail-value" id="waterRequirement">Moderate</span>
+                    </div>
+                </div>
+
+                <div class="recommendation-reason">
+                    <h4>Why this crop?</h4>
+                    <p id="recommendationReason">Based on your soil pH of 6.5, moderate moisture levels, and the Rabi season, wheat is the most suitable crop for your land. It has good market demand and fits well with your irrigation system.</p>
+                </div>
+
+                <div class="alternative-crops">
+                    <h4>Alternative Options</h4>
+                    <div class="alternative-list">
+                        <div class="alternative-item">
+                            <span class="alt-crop">Barley</span>
+                            <span class="alt-confidence">85%</span>
+                        </div>
+                        <div class="alternative-item">
+                            <span class="alt-crop">Mustard</span>
+                            <span class="alt-confidence">78%</span>
+                        </div>
+                        <div class="alternative-item">
+                            <span class="alt-crop">Chickpea</span>
+                            <span class="alt-confidence">72%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-actions">
+                <button type="button" class="btn-secondary" onclick="window.location.href='dashboard.html'">Back to Dashboard</button>
+                <button type="button" class="btn-primary" onclick="window.location.href='disease-detection.html'">Monitor Crop Health</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

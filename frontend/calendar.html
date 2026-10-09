@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planting Schedule - FarmAI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="form-container">
+        <nav class="navbar">
+            <div class="logo">
+                <span class="logo-icon">🌾</span>
+                <span class="logo-text">FarmAI</span>
+            </div>
+            <div class="nav-links">
+                <a href="dashboard.html" class="btn-back">← Back to Dashboard</a>
+            </div>
+        </nav>
+
+        <div class="form-card">
+            <div class="form-header">
+                <h2>Planting Schedule</h2>
+                <p>Select when you want to plant your crop</p>
+            </div>
+            <form class="input-form" id="calendarForm">
+                <div class="form-group">
+                    <label for="plantingDate">Planting Date</label>
+                    <input type="date" id="plantingDate" name="plantingDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="season">Season</label>
+                    <select id="season" name="season" required>
+                        <option value="">Select season</option>
+                        <option value="kharif">Kharif (Monsoon - June to October)</option>
+                        <option value="rabi">Rabi (Winter - October to March)</option>
+                        <option value="zaid">Zaid (Summer - March to June)</option>
+                    </select>
+                </div>
+                <div class="season-info">
+                    <div class="season-card">
+                        <h4>Kharif Season</h4>
+                        <p>June - October</p>
+                        <small>Crops: Rice, Maize, Cotton, Sugarcane</small>
+                    </div>
+                    <div class="season-card">
+                        <h4>Rabi Season</h4>
+                        <p>October - March</p>
+                        <small>Crops: Wheat, Barley, Mustard, Potato</small>
+                    </div>
+                    <div class="season-card">
+                        <h4>Zaid Season</h4>
+                        <p>March - June</p>
+                        <small>Crops: Cucumber, Watermelon, Vegetables</small>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" onclick="window.location.href='dashboard.html'">Cancel</button>
+                    <button type="submit" class="btn-primary">Save & Continue</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

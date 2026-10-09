@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Detection - FarmAI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="form-container">
+        <nav class="navbar">
+            <div class="logo">
+                <span class="logo-icon">🌾</span>
+                <span class="logo-text">FarmAI</span>
+            </div>
+            <div class="nav-links">
+                <a href="dashboard.html" class="btn-back">← Back to Dashboard</a>
+            </div>
+        </nav>
+
+        <div class="form-card">
+            <div class="form-header">
+                <h2>Crop Disease Detection</h2>
+                <p>Upload an image of your crop leaf to detect diseases</p>
+            </div>
+
+            <div class="upload-section">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon">📷</div>
+                    <h3>Upload Leaf Image</h3>
+                    <p>Drag and drop an image here or click to select</p>
+                    <input type="file" id="imageInput" accept="image/*" hidden>
+                    <button type="button" class="btn-primary" onclick="document.getElementById('imageInput').click()">Choose Image</button>
+                </div>
+                <div class="image-preview" id="imagePreview" style="display: none;">
+                    <img id="previewImg" src="" alt="Preview">
+                    <button type="button" class="btn-secondary" onclick="removeImage()">Remove</button>
+                </div>
+            </div>
+
+            <div class="crop-selection">
+                <div class="form-group">
+                    <label for="cropSelect">Select Crop Type</label>
+                    <select id="cropSelect" name="cropSelect" required>
+                        <option value="">Select crop</option>
+                        <option value="wheat">Wheat</option>
+                        <option value="rice">Rice</option>
+                        <option value="maize">Maize (Corn)</option>
+                        <option value="cotton">Cotton</option>
+                        <option value="potato">Potato</option>
+                        <option value="tomato">Tomato</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="button" class="btn-secondary" onclick="window.location.href='dashboard.html'">Cancel</button>
+                <button type="button" class="btn-primary" id="analyzeBtn" onclick="analyzeImage()" disabled>Analyze Image</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

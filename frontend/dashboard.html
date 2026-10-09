@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - FarmAI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav class="navbar">
+            <div class="logo">
+                <span class="logo-icon">🌾</span>
+                <span class="logo-text">FarmAI</span>
+            </div>
+            <div class="nav-links">
+                <span class="user-name">Welcome, Farmer</span>
+                <a href="index.html" class="btn-logout">Logout</a>
+            </div>
+        </nav>
+
+        <div class="dashboard-content">
+            <div class="dashboard-header">
+                <h1>Your Farming Dashboard</h1>
+                <p>Manage your crops and get AI-powered recommendations</p>
+            </div>
+
+            <div class="dashboard-grid">
+                <div class="dashboard-card" onclick="window.location.href='land-details.html'">
+                    <div class="card-icon">🏞️</div>
+                    <h3>Land Details</h3>
+                    <p>Enter your land size and location</p>
+                    <div class="card-arrow">→</div>
+                </div>
+
+                <div class="dashboard-card" onclick="window.location.href='previous-crop.html'">
+                    <div class="card-icon">🌾</div>
+                    <h3>Previous Crop</h3>
+                    <p>What did you plant last season?</p>
+                    <div class="card-arrow">→</div>
+                </div>
+
+                <div class="dashboard-card" onclick="window.location.href='soil-details.html'">
+                    <div class="card-icon">🌍</div>
+                    <h3>Soil Details</h3>
+                    <p>Soil moisture, pH level, and nutrients</p>
+                    <div class="card-arrow">→</div>
+                </div>
+
+                <div class="dashboard-card" onclick="window.location.href='calendar.html'">
+                    <div class="card-icon">📅</div>
+                    <h3>Planting Schedule</h3>
+                    <p>Select your planting date</p>
+                    <div class="card-arrow">→</div>
+                </div>
+
+                <div class="dashboard-card" onclick="window.location.href='disease-detection.html'">
+                    <div class="card-icon">🔍</div>
+                    <h3>Disease Detection</h3>
+                    <p>Scan your crops for diseases</p>
+                    <div class="card-arrow">→</div>
+                </div>
+
+                <div class="dashboard-card" onclick="window.location.href='price-prediction.html'">
+                    <div class="card-icon">📈</div>
+                    <h3>Price Prediction</h3>
+                    <p>Get crop price forecasts</p>
+                    <div class="card-arrow">→</div>
+                </div>
+            </div>
+
+            <div class="quick-actions">
+                <button class="btn-primary" onclick="window.location.href='confirmation.html'">Get Crop Recommendation</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
